@@ -14,6 +14,14 @@
 	<button id="times" type="button">*</button>
 	<button id="divided" type="button">/</button>
 
-	<script src="js/main.js"></script>
+	<!-- require -->
+	<script src="js/lib/require.min.js"></script>
+	<script>
+		require.config({
+			baseUrl: 'js'
+		});
+		require(['main']);
+	</script>
+	<!-- endrequire -->
 </body>
 </html>

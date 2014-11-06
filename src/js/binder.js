@@ -1,9 +1,9 @@
 import { ops } from "./calc";
 
 function bind(button, op) {
-	var v1 = parseInt(n1.value) || 0;
-	var v2 = parseInt(n2.value) || 0;
 	button.addEventListener("click", function() {
+		var v1 = parseInt(n1.value) || 0;
+		var v2 = parseInt(n2.value) || 0;
 		result.value = op(v1, v2);
 	});
 }

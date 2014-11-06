@@ -1,0 +1,19 @@
+{
+  "name": "calc",
+  "version": "0.0.0",
+  "description": "Modular calculator",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luiz Corte Real <luiz.real@caelum.com.br>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-6to5": "~1.0.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-connect": "~0.8.0"
+  }
+}
