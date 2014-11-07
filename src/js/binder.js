@@ -13,4 +13,6 @@ export function bindAll() {
 	bind(minus, ops.minus);
 	bind(times, ops.times);
 	bind(divided, ops.divided);
+	bind(mod, ops.mod);
+	bind(pow, ops.pow);
 }
