@@ -23,6 +23,10 @@ module.exports = function(grunt) {
 				dest: 'dist',
 				src: '**',
 				expand: true
+			},
+			main: {
+				src: 'dist/js/main.js',
+				dest: 'dist/js/main-toprocess.js'
 			}
 		},
 		'6to5': {
@@ -51,16 +55,32 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			}
+		},
+		browserify: {
+			dist: {
+				files: {
+					'dist/js/main.js': 'dist/js/main-toprocess.js'
+				}
+			}
+		},
+		uglify: {
+			dist: {
+				files: {
+					'dist/js/main.js': 'dist/js/main.js'
+				}
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-6to5');
+	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
-	grunt.registerTask('compile', ['6to5']);
-	grunt.registerTask('build', ['clean', 'copy', 'compile']);
+	grunt.registerTask('compile', ['6to5', 'copy:main', 'browserify', 'uglify']);
+	grunt.registerTask('build', ['clean', 'copy:dist', 'compile']);
 	grunt.registerTask('default', ['build', 'connect', 'watch']);
 };
