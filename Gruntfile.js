@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 				options: {
 					event: ['all']
 				},
-				tasks: '6to5'
+				tasks: 'compile'
 			}
 		},
 		connect: {
@@ -52,6 +52,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('compile', ['clean', 'copy', '6to5']);
-	grunt.registerTask('default', ['compile', 'connect', 'watch']);
+	grunt.registerTask('compile', ['6to5']);
+	grunt.registerTask('build', ['clean', 'copy', 'compile']);
+	grunt.registerTask('default', ['build', 'connect', 'watch']);
 };
