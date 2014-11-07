@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 				files: distFiles,
 			},
 			options: {
-				modules: 'amd'
+				modules: 'common'
 			}
 		},
 		watch: {

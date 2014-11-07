@@ -57,13 +57,7 @@
 		<button id="pow" type="button">^</button>
 	</fieldset>
 
-	<script src="js/lib/require.min.js"></script>
-	<script>
-		require.config({
-			baseUrl: 'js'
-		});
-		require(['main']);
-	</script>
+	<script src="js/lib/ace.min.js" data-main="js/main"></script>
 	<script>
 		window.onload = function() {
 			console.log(performance.timing.domInteractive - performance.timing.navigationStart);
