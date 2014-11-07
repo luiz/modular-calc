@@ -23,6 +23,10 @@ module.exports = function(grunt) {
 				dest: 'dist',
 				src: '**',
 				expand: true
+			},
+			main: {
+				src: 'dist/js/main-build.js',
+				dest: 'dist/js/main.js'
 			}
 		},
 		'6to5': {
@@ -51,6 +55,15 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			}
+		},
+		requirejs: {
+			dist: {
+				options: {
+					baseUrl: 'dist/js',
+					out: 'dist/js/main-build.js',
+					name: 'main'
+				}
+			}
 		}
 	});
 
@@ -59,8 +72,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
 
-	grunt.registerTask('compile', ['6to5']);
-	grunt.registerTask('build', ['clean', 'copy', 'compile']);
+	grunt.registerTask('compile', ['6to5', 'requirejs', 'copy:main']);
+	grunt.registerTask('build', ['clean', 'copy:dist', 'compile']);
 	grunt.registerTask('default', ['build', 'connect', 'watch']);
 };
