@@ -1,8 +1,16 @@
 module.exports = function(grunt) {
-	var jsFiles = ['main.js', 'binder.js', 'calc.js', 'ops/plus.js', 'ops/minus.js', 'ops/divided.js', 'ops/times.js'];
+	var file = require('file');
 	var distFiles = {};
-	jsFiles.forEach(function(file) {
-		distFiles['dist/js/' + file] = 'src/js/' + file;
+
+	file.walkSync('src/js', function(dirPath, dirs, files) {
+		if (dirPath.indexOf('/lib') != -1) {
+			return;
+		}
+		files.forEach(function(jsFile) {
+			var srcPath = file.path.join(dirPath, jsFile);
+			var newPath = srcPath.replace('src', 'dist');
+			distFiles[newPath] = srcPath;
+		});
 	});
 
 	grunt.initConfig({
