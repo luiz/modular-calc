@@ -2,34 +2,59 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
 	<title>Modular calculator</title>
 	<style>
-		input, output, button {
-			padding: .25em;
+		fieldset {
 			font-family: monospace;
 			font-size: 200%;
+			display: inline-block;
+			vertical-align: top;
+			text-align: center;
+		}
+		label {
+			display: block;
+		}
+		input, output, button {
+			padding: .25em;
 			border: 1px solid gray;
+			font: inherit;
 		}
 		input, output {
-			display: block;
 			text-align: right;
 			width: 15ch;
+			display: inline-block;
+			vertical-align: middle;
 		}
 	</style>
 </head>
 <body>
-	<h1>Calculator</h1>
+	<fieldset>
+		<legend>Calculator</legend>
+		<label>
+			n
+			<input id="n1" type="number">
+		</label>
+		<label>
+			m
+			<input id="n2" type="number">
+		</label>
+		<label>
+			=
+			<output id="result"></output>
+		</label>
+	</fieldset>
 
-	<input id="n1" type="number">
-	<input id="n2" type="number">
-	<output id="result"></output>
+	<fieldset>
+		<legend>Operations</legend>
 
-	<button id="plus" type="button">+</button>
-	<button id="minus" type="button">-</button>
-	<button id="times" type="button">*</button>
-	<button id="divided" type="button">/</button>
-	<button id="mod" type="button">%</button>
-	<button id="pow" type="button">^</button>
+		<button id="plus" type="button">+</button>
+		<button id="minus" type="button">-</button>
+		<button id="times" type="button">*</button>
+		<button id="divided" type="button">/</button>
+		<button id="mod" type="button">%</button>
+		<button id="pow" type="button">^</button>
+	</fieldset>
 
 	<script src="js/lib/require.min.js"></script>
 	<script>
