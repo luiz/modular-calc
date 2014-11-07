@@ -3,8 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Modular calculator</title>
+	<style>
+		input, output, button {
+			padding: .25em;
+			font-family: monospace;
+			font-size: 200%;
+			border: 1px solid gray;
+		}
+		input, output {
+			display: block;
+			text-align: right;
+			width: 15ch;
+		}
+	</style>
 </head>
 <body>
+	<h1>Calculator</h1>
+
 	<input id="n1" type="number">
 	<input id="n2" type="number">
 	<output id="result"></output>
