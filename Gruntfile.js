@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 				options: {
 					event: ['all']
 				},
-				tasks: 'compile'
+				tasks: 'build'
 			}
 		},
 		connect: {
