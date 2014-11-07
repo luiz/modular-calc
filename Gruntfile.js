@@ -51,5 +51,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.registerTask('default', ['clean', 'copy', '6to5', 'connect', 'watch']);
+
+	grunt.registerTask('compile', ['clean', 'copy', '6to5']);
+	grunt.registerTask('default', ['compile', 'connect', 'watch']);
 };
