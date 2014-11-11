@@ -64,5 +64,10 @@
 		});
 		require(['main']);
 	</script>
+	<script>
+		window.onload = function() {
+			console.log(performance.timing.domComplete - performance.timing.navigationStart);
+		}
+	</script>
 </body>
 </html>
