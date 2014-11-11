@@ -1,0 +1,43 @@
+250 kbps, 600 ms RTT
+
+amd-http1 (Firefox, http): 17.73 KB, 2.55 s (1.92 s)
+amd-http2 (Firefox, http): 17.45 KB, 5.54 s (1.96 s)
+cjs-http1 (Firefox, http): 7.54 KB, 2.50 s (2.56 s)
+cjs-http2 (Firefox, http): 7.03 KB, 7.40 s (7.44 s)
+
+amd-http1 (Firefox, http, gzip): 16.95 KB, 2.58 s (1.93 s)
+amd-http2 (Firefox, http, gzip): 16.67 KB, 5.53 s (1.91 s)
+cjs-http1 (Firefox, http, gzip): 6.80 KB, 2.49 s (2.55 s)
+cjs-http2 (Firefox, http, gzip): 6.29 KB, 7.36 s (7.40 s)
+
+amd-http1 (Firefox, https): 17.73 KB, 3.79 s (3.16 s)
+amd-http2 (Firefox, https): 17.45 KB, 6.58 s (2.60 s)
+cjs-http1 (Firefox, https): 7.54 KB, 3.10 s (3.16 s)
+cjs-http2 (Firefox, https): 7.03 KB, 8.00 s (8.05 s)
+
+amd-http1 (Firefox, https, gzip): 16.95 KB, 3.19 s (2.55 s)
+amd-http2 (Firefox, https, gzip): 16.67 KB, 6.50 s (2.54 s)
+cjs-http1 (Firefox, https, gzip): 6.80 KB, 3.08 s (3.13 s)
+cjs-http2 (Firefox, https, gzip): 6.29 KB, 7.98 s (8.04 s)
+
+amd-http1 (Firefox, http2): 21.24 KB, 2.50 s (2.56 s)
+amd-http2 (Firefox, http2): 20.83 KB, 2.49 s (2.58 s)
+cjs-http1 (Firefox, http2): 9.61 KB, 3.09 s (3.15 s)
+cjs-http2 (Firefox, http2): 8.94 KB, 8.02 s (8.09 s)
+
+amd-http1 (Firefox, http2, push): -
+amd-http2 (Firefox, http2, push): identical (refused push)
+cjs-http1 (Firefox, http2, push): -
+cjs-http2 (Firefox, http2, push): identical (refused push)
+
+500 kbps, 600 ms RTT
+
+amd-http1 (Firefox, http2): 21.24 KB, 2.59 s (2.66 s)
+amd-http2 (Firefox, http2): 20.83 KB, 2.48 s (2.56 s)
+cjs-http1 (Firefox, http2): 9.61 KB, 3.19 s (3.25 s)
+cjs-http2 (Firefox, http2): 8.94 KB, 8.04 s (8.12 s)
+
+amd-http1 (Firefox, http2, push): -
+amd-http2 (Firefox, http2, push): 20.83 KB, 3.01 s (3.11 s)
+cjs-http1 (Firefox, http2, push): -
+cjs-http2 (Firefox, http2, push): identical (refused push)
