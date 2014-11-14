@@ -11,6 +11,12 @@ module.exports = function(grunt) {
 				expand: true
 			}
 		},
+		useminPrepare: {
+			html: 'dist/index.html'
+		},
+		usemin: {
+			html: 'dist/index.html'
+		},
 		watch: {
 			options: {
 				livereload: true
@@ -32,11 +38,15 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-usemin');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('build', ['clean', 'copy']);
+	grunt.registerTask('compile', ['useminPrepare', 'usemin', 'concat', 'uglify']);
+	grunt.registerTask('build', ['clean', 'copy', 'compile']);
 	grunt.registerTask('default', ['build', 'connect', 'watch']);
 };
