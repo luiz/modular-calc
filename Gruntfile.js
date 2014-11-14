@@ -29,6 +29,16 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			}
+		},
+		uglify: {
+			dist: {
+				files: [{
+					expand: true,
+					cwd: 'dist/js',
+					src: '**/*.js',
+					dest: 'dist/js'
+				}]
+			}
 		}
 	});
 
@@ -36,7 +46,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
-	grunt.registerTask('build', ['clean', 'copy']);
+	grunt.registerTask('build', ['clean', 'copy', 'uglify']);
 	grunt.registerTask('default', ['build', 'connect', 'watch']);
 };
