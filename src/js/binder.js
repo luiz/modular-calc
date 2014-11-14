@@ -1,5 +1,3 @@
-import { ops } from "./calc";
-
 function bind(button, op) {
 	button.addEventListener("click", function() {
 		var v1 = parseInt(n1.value) || 0;
@@ -8,7 +6,7 @@ function bind(button, op) {
 	});
 }
 
-export function bindAll() {
+function bindAll() {
 	bind(plus, ops.plus);
 	bind(minus, ops.minus);
 	bind(times, ops.times);

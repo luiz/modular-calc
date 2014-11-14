@@ -1,3 +1,3 @@
-export function plus(n1, n2) {
+function plusFn(n1, n2) {
 	return n1 + n2;
 }
