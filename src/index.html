@@ -57,13 +57,16 @@
 		<button id="pow" type="button">^</button>
 	</fieldset>
 
-	<script src="js/lib/require.min.js"></script>
-	<script>
-		require.config({
-			baseUrl: 'js'
-		});
-		require(['main']);
-	</script>
+	<script src="js/lib/define.js"></script>
+	<script src="js/main.js" async></script>
+	<script src="js/binder.js" async></script>
+	<script src="js/calc.js" async></script>
+	<script src="js/ops/divided.js" async></script>
+	<script src="js/ops/minus.js" async></script>
+	<script src="js/ops/mod.js" async></script>
+	<script src="js/ops/plus.js" async></script>
+	<script src="js/ops/pow.js" async></script>
+	<script src="js/ops/times.js" async></script>
 	<script>
 		window.onload = function() {
 			console.log(performance.timing.domInteractive - performance.timing.navigationStart);

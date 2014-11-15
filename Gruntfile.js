@@ -51,6 +51,14 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			}
+		},
+		namem: {
+			dist: {
+				base: 'dist/js',
+				filter: function(filepath) {
+					return filepath.indexOf('lib/define.js') === -1;
+				}
+			}
 		}
 	});
 
@@ -60,7 +68,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('compile', ['6to5']);
+	grunt.loadTasks('tasks');
+
+	grunt.registerTask('compile', ['6to5', 'namem']);
 	grunt.registerTask('build', ['clean', 'copy', 'compile']);
 	grunt.registerTask('default', ['build', 'connect', 'watch']);
 };
