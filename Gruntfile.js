@@ -59,6 +59,16 @@ module.exports = function(grunt) {
 					return filepath.indexOf('lib/define.js') === -1;
 				}
 			}
+		},
+		uglify: {
+			dist: {
+				files: [{
+					expand: true,
+					cwd: 'dist/js',
+					src: '**/*.js',
+					dest: 'dist/js'
+				}]
+			}
 		}
 	});
 
@@ -67,10 +77,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.loadTasks('tasks');
 
-	grunt.registerTask('compile', ['6to5', 'namem']);
+	grunt.registerTask('compile', ['6to5', 'namem', 'uglify']);
 	grunt.registerTask('build', ['clean', 'copy', 'compile']);
 	grunt.registerTask('default', ['build', 'connect', 'watch']);
 };
