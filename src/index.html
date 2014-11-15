@@ -58,6 +58,7 @@
 	</fieldset>
 
 	<script src="js/lib/define.js"></script>
+	<!-- build:js js/main-all.js -->
 	<script src="js/main.js" async></script>
 	<script src="js/binder.js" async></script>
 	<script src="js/calc.js" async></script>
@@ -67,6 +68,7 @@
 	<script src="js/ops/plus.js" async></script>
 	<script src="js/ops/pow.js" async></script>
 	<script src="js/ops/times.js" async></script>
+	<!-- endbuild -->
 	<script>
 		window.onload = function() {
 			console.log(performance.timing.domInteractive - performance.timing.navigationStart);

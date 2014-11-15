@@ -59,18 +59,27 @@ module.exports = function(grunt) {
 					return filepath.indexOf('lib/define.js') === -1;
 				}
 			}
+		},
+		useminPrepare: {
+			html: 'dist/index.html'
+		},
+		usemin: {
+			html: 'dist/index.html'
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-6to5');
+	grunt.loadNpmTasks('grunt-usemin');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	grunt.loadTasks('tasks');
 
-	grunt.registerTask('compile', ['6to5', 'namem']);
+	grunt.registerTask('compile', ['6to5', 'namem', 'useminPrepare', 'usemin', 'concat', 'uglify']);
 	grunt.registerTask('build', ['clean', 'copy', 'compile']);
 	grunt.registerTask('default', ['build', 'connect', 'watch']);
 };
